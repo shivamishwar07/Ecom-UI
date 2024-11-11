@@ -1,0 +1,108 @@
+.furniture-section {
+    margin: 7em;
+    padding: 20px;
+    margin-bottom: 2em;
+
+    .popular-furniture {
+        .top-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .furniture-heading {
+            font-size: 28px;
+            margin-left: 12px;
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+
+            .nav-button {
+                margin: 0 5px;
+                padding: 10px;
+                background: #ddd;
+                color: black;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: #48676B;
+                    color: white;
+                }
+
+                &:disabled {
+                    background: #ddd;
+                    cursor: not-allowed;
+                }
+
+                svg {
+                    display: block;
+                    margin: auto;
+                }
+            }
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .furniture-card {
+            margin: 10px;
+            flex: 0 0 calc(33.33% - 20px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            &.dishes {
+                background-color: #fff;
+            }
+
+            .furniture-image {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+
+            .card-content {
+                padding: 15px;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                .furniture-name {
+                    font-size: 28px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .furniture-card {
+                flex: 0 0 calc(50% - 20px); // For tablet-sized devices
+            }
+        }
+
+        @media (max-width: 480px) {
+            .furniture-card {
+                flex: 0 0 calc(100% - 20px); // For mobile devices
+            }
+        }
+    }
+
+    .center-item {
+        display: flex;
+        justify-content: center;
+    }
+}

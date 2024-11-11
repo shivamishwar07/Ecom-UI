@@ -1,0 +1,46 @@
+<div class="furniture-section">
+    <div class="popular-furniture">
+        <div class="top-heading">
+            <h2 class="furniture-heading fw-normal fs-1">Our Collections</h2>
+            <div class="pagination me-1">
+                <button (click)="prev()" [disabled]="currentIndex === 0" class="nav-button">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                        </svg>
+                    </span>
+                </button>
+                <button (click)="next()" [disabled]="currentIndex + itemsPerPage >= popularFurniture.length"
+                    class="nav-button">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="card-container" [@carouselAnimation]="slideDirection" (animationDone)="onAnimationDone()">
+            <div class="furniture-card" *ngFor="let item of displayedFurniture">
+                <img [ngStyle]="{ width: item.width ? item.width : 'auto', marginLeft: item.width ? '20px' : '0px', objectFit: !item.objWidthCover ? '' : 'cover' }"
+                    [src]="item.image" alt="{{ item.name }}" class="furniture-image" />
+                <div class="card-content">
+                    <h3 class="furniture-name fs-5 text-black-50">{{ item.name.toUpperCase()}}</h3>
+                    <!-- <div class="rating center-item">
+                        <span *ngFor="let star of [].constructor(item.rating); let i = index">&#9733;</span>
+                        <span *ngFor="let star of [].constructor(5 - item.rating); let i = index">&#9734;</span>
+                    </div> -->
+                    <!-- <p class="center-item">{{ item.description }}</p> -->
+                    <!-- <div class="price-add">
+                        <span class="price text-secondary">\${{ item.price }}</span>
+                        <button class="add-to-cart" (click)="addToCart(item)">Add to Cart</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

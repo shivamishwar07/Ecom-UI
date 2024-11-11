@@ -1,0 +1,110 @@
+.sale-banner {
+    background-color: #48676b;
+    padding: 20px;
+    align-items: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    margin: 0 9em 3em 9em;
+    height: 450px;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+
+.sale-info {
+    max-width: 300px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.sale-info h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.sale-info p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+}
+
+.countdown {
+    display: flex;
+    align-items: center;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+}
+
+.number {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.colon {
+    font-size: 36px;
+    margin: 0 10px;
+}
+
+.product-images {
+    display: flex;
+    gap: 20px;
+    animation: fadeInRight 1s ease-in-out;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.shop-now-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #48676b;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.shop-now-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

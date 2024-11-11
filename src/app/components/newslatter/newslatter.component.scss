@@ -1,0 +1,58 @@
+.newsletter-section {
+    background-color: #3a5867;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    height: calc(100vh - 150px);
+    overflow: hidden;
+
+    h2,
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .input-group {
+        max-width: 400px;
+        margin: auto;
+        
+        ::placeholder {
+            color: #ccc;
+            opacity: 1;
+        }
+        
+        input {
+            background-color: transparent;
+            border-radius: 0;
+            color: white;
+        }
+
+        button {
+            border-radius: 0;
+        }
+    }
+}
+
+.image-grid {
+    .image-wrapper {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 300px;
+            height: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .image-grid .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

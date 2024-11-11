@@ -1,0 +1,80 @@
+.main-data {
+    position: relative;
+    overflow: hidden;
+}
+
+.top-val {
+    background-color: #fff;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10%;
+}
+
+.top-text {
+    max-width: 30%;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.bottom-val {
+    background-color: #3A5966;
+    height: 250px;
+}
+
+.images-handle {
+    height: 300px;
+    width: 300px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.images-handle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.all-images {
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 0 15px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-wrapper {
+    animation: fadeInUp 0.6s ease-in-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.image-wrapper:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.image-wrapper:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.image-wrapper:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.image-wrapper:nth-child(4) {
+    animation-delay: 0.8s;
+}

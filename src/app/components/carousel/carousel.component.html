@@ -1,0 +1,18 @@
+<div class="carousel-container">
+    <div *ngFor="let item of carouselItems; let i = index" class="carousel-item" [class.active]="i === currentIndex"
+        [ngStyle]="{'background-image': 'url(' + item.backgroundImage + ')'}">
+        <div class="carousel-overlay d-flex justify-content-center align-items-center">
+            <div class="carousel-content text-center">
+                <h6 class="small-title">{{ item.smallTitle }}</h6>
+                <h1 class="main-title">{{ item.mainTitle }}</h1>
+                <p class="description">{{ item.description }}</p>
+                <button class="btn text-black btn-light fw-semibold shop-now-btn">{{ item.buttonText }}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-indicators">
+        <span *ngFor="let item of carouselItems; let i = index" [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"></span>
+    </div>
+</div>

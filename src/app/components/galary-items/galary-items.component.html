@@ -1,0 +1,14 @@
+<div class="gallery-container d-flex justify-content-around">
+    <div class="left-image">
+        <img [src]="leftData.src" alt="Main Image" />
+        <div class="d-flex justify-content-center fs-6 fw-semibold mb-2 mt-2">{{ leftData.title }}</div>
+        <div class="text-center">{{ leftData.description }}</div>
+    </div>
+
+    <div class="right-images">
+        <div *ngFor="let image of rightData" class="right-image">
+            <img [src]="image.src" alt="Right Image" />
+            <span *ngIf="image.label" class="label">{{ image.label }}</span>
+        </div>
+    </div>
+</div>

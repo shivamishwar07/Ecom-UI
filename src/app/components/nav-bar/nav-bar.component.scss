@@ -1,0 +1,22 @@
+.main-nav {
+    background-color: #405E6C;
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.tab-item-val {
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+    }
+}

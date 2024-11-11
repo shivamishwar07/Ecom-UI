@@ -1,0 +1,28 @@
+<div class="testimonials-container">
+    <h2 class="m-0 text-black-50 fs-5 mb-1">Customer Notes</h2>
+    <h2>Words From Our Customers</h2>
+
+    <div class="testimonial-cards">
+        <div *ngFor="let testimonial of visibleTestimonials" class="testimonial-card" [@fadeIn]>
+            <div class="customer-info bg-black text-white px-4 pt-2">
+                <!-- <img [src]="testimonial.image" alt="{{ testimonial.name }}" /> -->
+                <h3 class="fs-5 customer-name mt-3">{{ testimonial.name }}</h3>
+                <h4 class="fs-6 text-white-50">{{ testimonial.address }}</h4>
+            </div>
+            <div class="rating center-item fs-4 px-3 pt-1">
+                <span *ngFor="let star of [].constructor(testimonial.rating); let i = index">&#9733;</span>
+                <span *ngFor="let star of [].constructor(5 - testimonial.rating); let i = index">&#9734;</span>
+            </div>
+            <p class="p-4 pt-2">{{ testimonial.message }}</p>
+        </div>
+    </div>
+
+    <div class="navigation-arrows">
+        <button (click)="prevTestimonial()" [disabled]="isPrevDisabled">
+            <span class="arrow left-arrow">&#8592;</span>
+        </button>
+        <button (click)="nextTestimonial()" [disabled]="isNextDisabled">
+            <span class="arrow right-arrow">&#8594;</span>
+        </button>
+    </div>
+</div>

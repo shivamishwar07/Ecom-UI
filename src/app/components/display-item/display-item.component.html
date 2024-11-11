@@ -1,0 +1,14 @@
+<div class="main-data position-relative">
+    <div class="top-val d-flex justify-content-center align-items-center pt-5 text-center">
+        <span class="top-text">
+            Modern function, Practical Luxury, Upscale Design, Whole home furnishings for how you live today.
+        </span>
+    </div>
+    <div class="d-flex position-absolute gap-4 justify-content-center all-images">
+        <div *ngFor="let img of items" class="image-wrapper">
+            <img [src]="img.image" [alt]="img.title" class="animated images-handle border border-2 rounded-2">
+            <div class="d-flex justify-content-center mt-3 text-white">{{ img.title }}</div>
+        </div>
+    </div>
+    <div class="bottom-val"></div>
+</div>
